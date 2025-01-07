@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(200deg,rgb(5, 5, 5),rgb(163, 159, 163),rgb(16, 16, 16));
+            background-image: url(./HTML/MEDIA/IMAGE/background.jpg);
+        }
+        #body{
+            border: solid 5px rgb(100, 99, 99);
+            display: flex;
+            width: 380px;
+            height: 300px;
+            justify-content: center;
+            position: absolute;
+            top: 20%;
+            left:40%;
+            border-radius: 25px;
+            background-color:rgb(160, 153, 153);
+            opacity: 0.9;
+        }
+        input{
+            margin: 5px;
+            padding: 10px;
+            margin-left: 12px;
+            width: 230px;
+            border-radius: 20px;
+        }
+        .label{
+            margin-left: 5px;
+        }
+        #GFG{
+            text-align: center;
+            margin-left:253px;margin-top: 20px;
+            text-decoration: none;
+        }
+        #GF{
+            width: 75px;
+            text-decoration: none;
+            margin-left:40px;
+            padding-left: 103px;
+            padding-top: 6px;
+            margin-top: 1px;
+            
+            
+            
+            
+        }
+        .txt{
+            margin:3px;
+            margin-top: -13px;
+        }
+        #button{color:yellow;}
+    </style>
+    <script>
+        function Login(){
+            var Database=[{'Username':'periyasamy','Password':'samy@123'},{'Username':'periyasamy','Password':'samy@456'},{'Username':'periyasamy','Password':'samy@789'}]
+            var Username=document.getElementById('user').value
+            var Password=document.getElementById('pass').value
+            var flag=false
+            for(var i=0;i<Database.length;i++){
+                if(Database[i]['Username']==Username){
+                    if(Database[i]['Password']==Password){
+                        flag=true
+                    }
+                }
+            }
+            if(flag==true)
+            {
+                window.location.href="./HTML/welcome1.html"
+            }
+            else{
+                document.getElementById("error").innerHTML="Invalid usernamr or password"
+            }
+        }
+    </script>
+</head>
+<body id="common">
+    <div id="body">
+        <div>
+            <h1 style="text-align: center;color: gold;font-family: serif;text-shadow: 7cm;">SPOTSTAR - LOG IN</h1>
+            <label class="label">Username</label>
+            <input type="text" placeholder="Username" id="user">
+            <label class="label">Password</label>
+            <input type="password" placeholder="Password" id="pass">
+            <div id="GF">
+                <button onclick="Login()" style="background-color: rgb(159, 181, 233);width: 120px;height: 35px;border-radius: 30px;">Log In</button>
+            </div>
+            <div id="GFG">
+                <a href="./HTML/forget.html" style="text-decoration: none;">forget password?</a><br>
+            </div>            
+            <div class="txt">
+                <label>Are you new user?<a  href="./HTML/sigin.html" style="text-decoration: none;"><label for="">Sign Up</label></a>
+            </div>
+            <p id="error" style="color: red;"></p>
+        </div>
+    </div>
+</body>
+</html>
